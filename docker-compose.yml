@@ -1,0 +1,21 @@
+version: 'v2.33.1-desktop.1'
+
+services:
+  licensingservice:
+
+    image: ducthanhnguyen95/licensing-service:0.0.1-SNAPSHOT
+
+    ports:
+      - "8080:8080"
+
+    environment:
+      - "SPRING_PROFILES_ACTIVE=dev"
+
+    networks:
+      backend:
+        aliases:
+          - "licenseservice"
+
+networks:
+  backend:
+    driver: bridge
